@@ -7,9 +7,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class test_opmode extends OpMode {
     ProgrammingBoard board = new ProgrammingBoard();
 
-    boolean a_button = gamepad1.a;
-
-
     @Override
     public void init() {
         board.init(hardwareMap);
@@ -17,7 +14,7 @@ public class test_opmode extends OpMode {
 
     @Override
     public void loop() {
-        if (a_button) {
+        if (gamepad1.a) {
             board.setMotorSpeed(0.5);
         }
     }
