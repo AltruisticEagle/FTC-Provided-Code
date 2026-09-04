@@ -20,7 +20,7 @@ public class starterBotOpMode_Sept extends OpMode {
         boolean intake = gamepad1.a;
 
         if (speed != 0) {
-            board.setRobotSpeed(speed);
+            board.setMotorSpeed(speed);
         }
         if (intake) {
             board.intake();
