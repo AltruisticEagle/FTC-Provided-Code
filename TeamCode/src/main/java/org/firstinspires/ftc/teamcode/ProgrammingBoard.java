@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -7,11 +8,11 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class ProgrammingBoard {
-    private DcMotor frontLeftMotor;
-    private DcMotor frontRightMotor;
-    private DcMotor rearLeftMotor;
-    private DcMotor rearRightMotor;
-    private DcMotor intakeMotor;
+    private DcMotorEx frontLeftMotor;
+    private DcMotorEx frontRightMotor;
+    private DcMotorEx rearLeftMotor;
+    private DcMotorEx rearRightMotor;
+    private DcMotorEx intakeMotor;
     private Servo leftIntakeServo;
     private Servo rightIntakeServo;
 
@@ -23,20 +24,24 @@ public class ProgrammingBoard {
         // 2 Servos, one on either side of the intake
 
         // Initialising wheel motors
-        frontLeftMotor = hardwareMap.get(DcMotor.class, "frontLeftMotor");
+        frontLeftMotor = hardwareMap.get(DcMotorEx.class, "frontLeftMotor");
         frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
 
-        frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
+        frontRightMotor = hardwareMap.get(DcMotorEx.class, "frontRightMotor");
         frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
 
-        rearLeftMotor = hardwareMap.get(DcMotor.class, "rearLeftMotor");
+        rearLeftMotor = hardwareMap.get(DcMotorEx.class, "rearLeftMotor");
         rearLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rearLeftMotor.setDirection(DcMotor.Direction.REVERSE);
 
-        rearRightMotor = hardwareMap.get(DcMotor.class, "rearRightMotor");
+        rearRightMotor = hardwareMap.get(DcMotorEx.class, "rearRightMotor");
         rearRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rearRightMotor.setDirection(DcMotor.Direction.FORWARD);
 
         // Initialising intake motor
-        intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
+        intakeMotor = hardwareMap.get(DcMotorEx.class, "intakeMotor");
         intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // Initialising intake servos

@@ -8,6 +8,10 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @TeleOp
 public class starterBotOpMode_Sept extends OpMode {
     ProgrammingBoard board = new ProgrammingBoard();
+    double frontLeftVelocity = 0;
+    double frontRightVelocity = 0;
+    double rearLeftVelocity = 0;
+    double rearRightVelocity = 0;
 
     @Override
     public void init() {
@@ -16,12 +20,17 @@ public class starterBotOpMode_Sept extends OpMode {
 
     @Override
     public void loop() {
-        boolean speed = gamepad1.dpad_up;
+        float speed = gamepad1.left_stick_y;
+
         boolean intake = gamepad1.a;
         boolean stopRobot = gamepad1.b;
 
-        if (speed) {
-            board.setMotorSpeed(0.1);
+        if (speed != 0) {
+            board.setMotorSpeed(speed);
+            telemetry.addData("FL", frontLeftVelocity);
+            telemetry.addData("FR", frontRightVelocity);
+            telemetry.addData("RL", rearLeftVelocity);
+            telemetry.addData("RR", rearRightVelocity);
         }
         if (intake) {
             board.intake();
