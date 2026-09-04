@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @TeleOp
 public class starterBotOpMode_Sept extends OpMode {
     ProgrammingBoard board = new ProgrammingBoard();
-    // private ElapsedTime runtime = new ElapsedTime();
+    // private ElapsedTime runtime = new ElapsedTime(); // Not sure if we need to use time
 
     @Override
     public void init() {
