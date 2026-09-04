@@ -45,7 +45,7 @@ public class ProgrammingBoard {
         rightIntakeServo = hardwareMap.get(Servo.class, "rightIntakeServo");
     }
 
-    public void setRobotSpeed(double speed) {
+    public void setMotorSpeed(double speed) {
         frontLeftMotor.setPower(speed);
         frontRightMotor.setPower(speed);
         rearLeftMotor.setPower(speed);
