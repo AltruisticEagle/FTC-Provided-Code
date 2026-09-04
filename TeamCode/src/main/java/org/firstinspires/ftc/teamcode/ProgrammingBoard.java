@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
@@ -25,24 +24,24 @@ public class ProgrammingBoard {
 
         // Initialising wheel motors
         frontLeftMotor = hardwareMap.get(DcMotorEx.class, "frontLeftMotor");
-        frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        frontLeftMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        frontLeftMotor.setDirection(DcMotorEx.Direction.REVERSE);
 
         frontRightMotor = hardwareMap.get(DcMotorEx.class, "frontRightMotor");
-        frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
+        frontRightMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        frontRightMotor.setDirection(DcMotorEx.Direction.FORWARD);
 
         rearLeftMotor = hardwareMap.get(DcMotorEx.class, "rearLeftMotor");
-        rearLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rearLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        rearLeftMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        rearLeftMotor.setDirection(DcMotorEx.Direction.REVERSE);
 
         rearRightMotor = hardwareMap.get(DcMotorEx.class, "rearRightMotor");
-        rearRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rearRightMotor.setDirection(DcMotor.Direction.FORWARD);
+        rearRightMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        rearRightMotor.setDirection(DcMotorEx.Direction.FORWARD);
 
         // Initialising intake motor
         intakeMotor = hardwareMap.get(DcMotorEx.class, "intakeMotor");
-        intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        intakeMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
         // Initialising intake servos
         leftIntakeServo = hardwareMap.get(Servo.class, "leftIntakeServo");
@@ -61,6 +60,23 @@ public class ProgrammingBoard {
         intakeMotor.setPower(0.5);
         leftIntakeServo.setPosition(0);
         rightIntakeServo.setPosition(0);
+    }
+
+    // Velocity functions for telemetry purposes
+    public double getFrontLeftVelocity() {
+        return frontLeftMotor.getVelocity();
+    }
+
+    public double getFrontRightVelocity() {
+        return frontRightMotor.getVelocity();
+    }
+
+    public double getRearLeftVelocity() {
+        return rearLeftMotor.getVelocity();
+    }
+
+    public double getRearRightVelocity() {
+        return rearRightMotor.getVelocity();
     }
 }
 
