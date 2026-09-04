@@ -16,14 +16,18 @@ public class starterBotOpMode_Sept extends OpMode {
 
     @Override
     public void loop() {
-        double speed = gamepad1.left_stick_y;
+        boolean speed = gamepad1.dpad_up;
         boolean intake = gamepad1.a;
+        boolean stopRobot = gamepad1.b;
 
-        if (speed != 0) {
-            board.setMotorSpeed(speed);
+        if (speed) {
+            board.setMotorSpeed(0.1);
         }
         if (intake) {
             board.intake();
+        }
+        if (stopRobot) {
+            board.setMotorSpeed(0);
         }
     }
 }
