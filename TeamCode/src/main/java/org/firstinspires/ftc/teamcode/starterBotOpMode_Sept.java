@@ -22,7 +22,7 @@ public class starterBotOpMode_Sept extends OpMode {
         boolean stopRobot = gamepad1.b;
 
         if (speed != 0) {
-            board.setMotorSpeed(speed);
+            board.setMotorSpeed(speed * 0.25);
             telemetry.addData("FL", board.getFrontLeftVelocity());
             telemetry.addData("FR", board.getFrontRightVelocity());
             telemetry.addData("RL", board.getRearLeftVelocity());

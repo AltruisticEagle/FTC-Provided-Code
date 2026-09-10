@@ -25,11 +25,11 @@ public class ProgrammingBoard {
         // Initialising wheel motors
         frontLeftMotor = hardwareMap.get(DcMotorEx.class, "frontLeftMotor");
         frontLeftMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
-        frontLeftMotor.setDirection(DcMotorEx.Direction.REVERSE);
+        frontLeftMotor.setDirection(DcMotorEx.Direction.FORWARD);
 
         frontRightMotor = hardwareMap.get(DcMotorEx.class, "frontRightMotor");
         frontRightMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
-        frontRightMotor.setDirection(DcMotorEx.Direction.FORWARD);
+        frontRightMotor.setDirection(DcMotorEx.Direction.REVERSE);
 
         rearLeftMotor = hardwareMap.get(DcMotorEx.class, "rearLeftMotor");
         rearLeftMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
